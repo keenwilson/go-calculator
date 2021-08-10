@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -29,20 +30,9 @@ func main() {
 	default:
 		panic("invalid operation")
 	}
+	result = math.Round(result*100) / 100
 	fmt.Printf("The result is %v\n\n", result)
 
-}
-
-func doSomething() {
-	fmt.Println("Doing something")
-}
-
-func addAllValues(values ...int) (int, int) {
-	total := 0
-	for _, v := range values {
-		total += v
-	}
-	return total, len(values)
 }
 
 func getInput(propmt string) float64 {
